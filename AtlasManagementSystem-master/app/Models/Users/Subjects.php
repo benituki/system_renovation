@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Models\Users;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +15,6 @@ class Subjects extends Model
     ];
 
     public function users(){
-        return $this->belongsToMany(User::class);// リレーションの定義
+        return $this->belongsToMany(User::class, 'subject_users', 'subject_id', 'user_id');// リレーションの定義
     }
 }
