@@ -1,9 +1,8 @@
 <?php
-namespace App\Models;
-
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Users\User;
+use App\Models\Users\Subjects;
 
 class Subjects extends Model
 {
