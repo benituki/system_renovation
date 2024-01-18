@@ -63,6 +63,19 @@ class RegisterController extends Controller
         DB::beginTransaction(); //ビギントランザクション
         // 1つ、または複数のデータベース操作からすべて成功するか失敗するかを判断する。
 
+        // validation
+        $request -> validate ([
+            'over_name' => 'required',
+            'under_name' => 'required',
+            'over_name_kana' => 'required',
+            'under_name_kana' => 'required',
+            'mail_address' => 'required',
+            'sex' => 'required',
+            'old_year', 'old_month', 'old_day' => 'required',
+            'role' => 'required',
+            'password' => 'required'
+        ]);
+
         try{
             //下記、HTTPリクエストからパラメータを取得し変数に代入
             $old_year = $request->old_year;
