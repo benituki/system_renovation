@@ -25,13 +25,14 @@ class UsersTableSeeder extends Seeder
         'password' => Hash::make('test1234')
     ]);
 
-    $subject = DB::table('subjects')->insertGetId([
+    $subjects = DB::table('Subjects')->insertGetId([
         'subject' => '数学',
+        'created_at' => '2024-01-01'
     ]);
 
     DB::table('subject_users')->insert([
         'user_id' => $user,
-        'subject_id' => $subject,
+        'subject_id' => $subjects,
         'created_at' => now(),
     ]);
     }
